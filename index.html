@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Himatsingka — Systems & Native Software Developer</title>
+  <meta name="description" content="Portfolio of Shivam Himatsingka — 15-year-old systems and native app developer in India building lightweight software in Swift, C++, Kotlin, and Python." />
+  <meta name="keywords" content="Shivam Himatsingka, SwiftDrop, Meterbar, FiveK, macOS developer, Swift, systems programming, open source" />
+  <meta name="author" content="Shivam Himatsingka" />
+  <link rel="canonical" href="https://github.io" />
+
+  <!-- Open Graph for clean link previews -->
+  <meta property="og:title" content="Shivam Himatsingka — Systems & Native Software Developer" />
+  <meta property="og:description" content="Lightweight, zero-dependency native apps and systems tools in Swift, C++, Kotlin, and Python." />
+  <meta property="og:url" content="https://github.io" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --accent: #0969da;
+      --card-bg: #f9fafb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --fg: #e6edf3;
+        --muted: #8b949e;
+        --border: #30363d;
+        --accent: #58a6ff;
+        --card-bg: #161b22;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+    header { margin-bottom: 2.5rem; }
+    h1 { font-size: 2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; margin: 0 0 1rem; }
+    .links a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .links a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin: 2.25rem 0 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .card-title:hover { text-decoration: underline; }
+    .tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.1rem 0.55rem;
+      white-space: nowrap;
+    }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .skills { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shivam Himatsingka</h1>
+    <p class="subtitle">
+      15-year-old systems &amp; native software developer from India. Building fast, zero-dependency tools in Swift, C++, Kotlin, and Python.
+    </p>
+    <div class="links">
+      <a href="https://github.com" rel="me">GitHub (@ShivamHimatsingka)</a>
+      <a href="https://github.com?tab=repositories">All Repositories</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Featured Open-Source Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header">
+          <a class="card-title" href="https://github.com/SwiftDrop">SwiftDrop</a>
+          <span class="tag">Swift · Kotlin · .NET 8</span>
+        </div>
+        <p>
+          Native AirDrop-style file sharing across Mac, iPhone, Android, and Windows (LocalSend v2 compatible). Uses Apple peer-to-peer Wi-Fi (AWDL, ~40 MB/s), Bluetooth LE wake-up for locked iPhones, and TLS-encrypted streaming.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <a class="card-title" href="https://github.com/Meterbar">Meterbar</a>
+          <span class="tag">Swift · AppKit · CoreGraphics</span>
+        </div>
+        <p>
+          Tiny native macOS menu bar system monitor for CPU, GPU, memory, SMC thermal sensors, disk, network, and battery in ~12 MB of RAM and 0.3% idle CPU (0.4 MB single-file universal binary).
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <a class="card-title" href="https://github.com/FiveK">FiveK</a>
+          <span class="tag">Swift · ScreenCaptureKit · VideoToolbox</span>
+        </div>
+        <p>
+          Use a 27" 5K iMac as a true 5120×2880 extended Retina display over Wi-Fi. Hardware HEVC encoding, zero idle background usage via launchd socket activation, and a decoupled 120 Hz cursor overlay.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <a class="card-title" href="https://github.com/MIDI_Footcontroller_Arduino_ProMicro">MIDI Footcontroller (Arduino Pro Micro)</a>
+          <span class="tag">C++ · ATmega32U4 · USB MIDI</span>
+        </div>
+        <p>
+          Driver-free, class-compliant 8-button USB MIDI foot controller for guitar rigs and DAWs with hardware debounce and configurable Program Change / Control Change messages.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <a class="card-title" href="https://github.com/Graphical-Calculator">Graphical Calculator</a>
+          <span class="tag">Python · PySide6 · NumPy · SymPy</span>
+        </div>
+        <p>
+          Desmos-inspired desktop graphing calculator supporting real-time expression plotting, two-way synchronized variable sliders, custom points, and curve tracking.
+        </p>
+      </article>
+    </div>
+
+    <h2>Technical Stack</h2>
+    <p class="skills">
+      <strong>Apple &amp; Systems:</strong> Swift, AppKit, SwiftUI, ScreenCaptureKit, VideoToolbox, CoreGraphics, IOKit / SMC, launchd<br />
+      <strong>Cross-Platform &amp; Networking:</strong> Kotlin (Jetpack Compose), C# / .NET 8, Bluetooth LE, AWDL / Wi-Fi Direct, TLS<br />
+      <strong>Embedded &amp; Scientific:</strong> C++ (Arduino / ATmega32U4), Python (NumPy, SymPy, PySide6, PyQtGraph)
+    </p>
+  </main>
+
+  <footer>
+    © 2026 Shivam Himatsingka · <a href="https://github.com" style="color: inherit;">://github.com</a>
+  </footer>
+</body>
+</html>
