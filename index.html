@@ -16,7 +16,9 @@
   <meta property="og:description" content="Lightweight, zero-dependency native apps and systems tools in Swift, C++, Kotlin, and Python." />
   <meta property="og:url" content="https://shivamhimatsingka.github.io/" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://shivamhimatsingka.github.io/img/chromesthesia.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://shivamhimatsingka.github.io/img/chromesthesia.jpg" />
 
   <style>
     :root {
@@ -125,6 +127,20 @@
       padding: 0.1rem 0.6rem;
       white-space: nowrap;
     }
+
+    .card { padding: 0; overflow: hidden; }
+    .card-body { display: flex; flex-direction: column; flex: 1; padding: 1.1rem 1.25rem 1.25rem; }
+    .media { aspect-ratio: 16 / 10; overflow: hidden; background: #111; border-bottom: 1px solid var(--border); }
+    .media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .card:hover .media img { transform: scale(1.04); }
+    .media.banner { display: flex; align-items: center; justify-content: center; }
+    .media.banner img.icon { width: 96px; height: 96px; border-radius: 22px; object-fit: contain; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .media.banner img.icon:hover, .card:hover .media.banner img { transform: none; }
+    .glyph { font-size: 4rem; filter: drop-shadow(0 6px 14px rgba(0,0,0,.3)); }
+    .card.featured { grid-column: 1 / -1; }
+    .card.featured .media { aspect-ratio: 16 / 7; }
+    .card.featured .media img[src*=conduit] { object-position: top; }
+    .card.featured .card-title { font-size: 1.3rem; }
     .stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 1rem; }
     .stack div { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
     .stack h3 { margin: 0 0 0.4rem; font-size: 0.95rem; }
@@ -175,52 +191,69 @@
     <main>
       <h2 id="projects">Featured projects</h2>
       <div class="grid">
-        <a class="card" href="https://github.com/ShivamHimatsingka/SwiftDrop">
-          <div class="card-title">SwiftDrop</div>
-          <p>AirDrop-style file sharing across Mac, iPhone, Android, and Windows (LocalSend v2 compatible). Apple peer-to-peer Wi-Fi (AWDL), Bluetooth LE wake-up for locked iPhones, and TLS-encrypted streaming.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">Kotlin</span><span class="tag">.NET 8</span><span class="tag">AWDL</span></div>
+        <a class="card  featured" href="https://github.com/ShivamHimatsingka/Chromesthesia">
+          <div class="media"><img src="img/chromesthesia.jpg" width="1400" height="787" alt="Chromesthesia visuals reacting to an upbeat dance track" loading="lazy" style="object-position:center" /></div>
+          <div class="card-body">
+            <div class="card-title">Chromesthesia</div>
+            <p>Real-time synesthetic visuals for music production. Audio is analysed for notes, chords, key, tempo, and mood, then drives a GPU fluid simulation with HDR light and a Liquid Glass UI.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">WebGL2</span><span class="tag">Swift</span><span class="tag">FFT</span></div>
+          </div>
         </a>
-
-        <a class="card" href="https://github.com/ShivamHimatsingka/conduit">
-          <div class="card-title">Conduit</div>
-          <p>Free, open-source virtual audio router and mixer for macOS. A 16-channel virtual device with per-app capture via Core Audio Process Taps, a routing matrix, and 60 fps meters from the menu bar.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">Core Audio</span><span class="tag">AppKit</span><span class="tag">Audio driver</span></div>
+        <a class="card featured" href="https://github.com/ShivamHimatsingka/conduit">
+          <div class="media"><img src="img/conduit.jpg" width="1400" height="871" alt="Conduit mixer showing sources, routing matrix and meters" loading="lazy" style="object-position:center" /></div>
+          <div class="card-body">
+            <div class="card-title">Conduit</div>
+            <p>Free, open-source virtual audio router and mixer for macOS. A 16-channel virtual device with per-app capture via Core Audio Process Taps, a routing matrix, and 60 fps meters.</p>
+            <div class="tags"><span class="tag">Swift</span><span class="tag">Core Audio</span><span class="tag">AppKit</span><span class="tag">Audio driver</span></div>
+          </div>
         </a>
-
-        <a class="card" href="https://github.com/ShivamHimatsingka/Chromesthesia">
-          <div class="card-title">Chromesthesia</div>
-          <p>Real-time synesthetic visuals for music production. Audio is analysed for notes, chords, key, tempo, and mood, then drives a GPU fluid simulation with HDR light and Liquid Glass UI.</p>
-          <div class="tags"><span class="tag">JavaScript</span><span class="tag">WebGL2</span><span class="tag">Swift</span><span class="tag">FFT</span></div>
-        </a>
-
         <a class="card" href="https://github.com/ShivamHimatsingka/PluginLens">
-          <div class="card-title">Plugin Lens</div>
-          <p>Native macOS app that lists every plugin a Logic Pro project uses, with the version it was saved with against what is installed now. Built by reverse-engineering Logic's undocumented project format; read-only and offline.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Audio Units</span></div>
+          <div class="media"><img src="img/pluginlens.jpg" width="1400" height="765" alt="Plugin Lens table of a Logic Pro project's plugins" loading="lazy" style="object-position:center" /></div>
+          <div class="card-body">
+            <div class="card-title">Plugin Lens</div>
+            <p>Lists every plugin a Logic Pro project uses, with the version it was saved with against what is installed now. Built by reverse-engineering Logic's undocumented project format; read-only and offline.</p>
+            <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Audio Units</span></div>
+          </div>
         </a>
-
         <a class="card" href="https://github.com/ShivamHimatsingka/Meterbar">
-          <div class="card-title">Meterbar</div>
-          <p>Tiny native macOS menu bar system monitor: CPU, GPU, memory, SMC thermal sensors, disk, network, and battery in ~12 MB of RAM and 0.3% idle CPU, as a 0.4 MB single-file universal binary.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">AppKit</span><span class="tag">IOKit</span></div>
+          <div class="media"><img src="img/meterbar.jpg" width="984" height="1400" alt="Meterbar menu bar readouts and CPU popup" loading="lazy" style="object-position:top" /></div>
+          <div class="card-body">
+            <div class="card-title">Meterbar</div>
+            <p>Tiny native macOS menu bar system monitor: CPU, GPU, memory, SMC thermal sensors, disk, network, and battery in ~12 MB of RAM and 0.3% idle CPU, as a 0.4 MB universal binary.</p>
+            <div class="tags"><span class="tag">Swift</span><span class="tag">AppKit</span><span class="tag">IOKit</span></div>
+          </div>
         </a>
-
-        <a class="card" href="https://github.com/ShivamHimatsingka/FiveK">
-          <div class="card-title">FiveK</div>
-          <p>Use a 27" 5K iMac as a true 5120×2880 extended display over Wi-Fi. Hardware HEVC encoding, zero idle usage via launchd socket activation, and a decoupled 120 Hz cursor overlay.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">ScreenCaptureKit</span><span class="tag">VideoToolbox</span></div>
-        </a>
-
-        <a class="card" href="https://github.com/ShivamHimatsingka/MIDI_Footcontroller_Arduino_ProMicro">
-          <div class="card-title">MIDI Footcontroller</div>
-          <p>Driver-free, class-compliant 8-button USB MIDI foot controller for guitar rigs and DAWs, with hardware debounce and configurable Program Change / Control Change messages.</p>
-          <div class="tags"><span class="tag">C++</span><span class="tag">ATmega32U4</span><span class="tag">USB MIDI</span></div>
-        </a>
-
         <a class="card" href="https://shivamhimatsingka.github.io/Graphical-Calculator/">
-          <div class="card-title">Graphical Calculator</div>
-          <p>Desmos-style graphing calculator that runs in your browser, with a native Python desktop edition. 2D and 3D graphing, complex domain colouring, geometry and matrix modes, regression, sliders with animation, and an Ask box that turns a question into an editable graph.</p>
-          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">SymPy</span></div>
+          <div class="media"><img src="img/calculator.jpg" width="1400" height="831" alt="Graphical Calculator plotting a sine wave, polar rose and shaded inequality" loading="lazy" style="object-position:center" /></div>
+          <div class="card-body">
+            <div class="card-title">Graphical Calculator</div>
+            <p>Desmos-style graphing calculator that runs in your browser, with a native Python desktop edition. 2D and 3D graphing, complex domain colouring, geometry and matrix modes, regression, sliders, and an Ask box.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">SymPy</span></div>
+          </div>
+        </a>
+        <a class="card" href="https://github.com/ShivamHimatsingka/SwiftDrop">
+          <div class="media banner" style="background:linear-gradient(135deg,#1e6fff,#6a2cff)"><img class="icon" src="img/swiftdrop-icon.png" width="96" height="96" alt="" loading="lazy" /></div>
+          <div class="card-body">
+            <div class="card-title">SwiftDrop</div>
+            <p>AirDrop-style file sharing across Mac, iPhone, Android, and Windows (LocalSend v2 compatible). Apple peer-to-peer Wi-Fi (AWDL), Bluetooth LE wake-up for locked iPhones, and TLS-encrypted streaming.</p>
+            <div class="tags"><span class="tag">Swift</span><span class="tag">Kotlin</span><span class="tag">.NET 8</span><span class="tag">AWDL</span></div>
+          </div>
+        </a>
+        <a class="card" href="https://github.com/ShivamHimatsingka/FiveK">
+          <div class="media banner" style="background:linear-gradient(135deg,#0f2027,#2c5364)"><img class="icon" src="img/fivek-icon.png" width="96" height="96" alt="" loading="lazy" /></div>
+          <div class="card-body">
+            <div class="card-title">FiveK</div>
+            <p>Use a 27" 5K iMac as a true 5120×2880 extended display over Wi-Fi. Hardware HEVC encoding, zero idle usage via launchd socket activation, and a decoupled 120 Hz cursor overlay.</p>
+            <div class="tags"><span class="tag">Swift</span><span class="tag">ScreenCaptureKit</span><span class="tag">VideoToolbox</span></div>
+          </div>
+        </a>
+        <a class="card" href="https://github.com/ShivamHimatsingka/MIDI_Footcontroller_Arduino_ProMicro">
+          <div class="media banner" style="background:linear-gradient(135deg,#f12711,#f5af19)"><span class="glyph">🎸</span></div>
+          <div class="card-body">
+            <div class="card-title">MIDI Footcontroller</div>
+            <p>Driver-free, class-compliant 8-button USB MIDI foot controller for guitar rigs and DAWs, with hardware debounce and configurable Program Change / Control Change messages.</p>
+            <div class="tags"><span class="tag">C++</span><span class="tag">ATmega32U4</span><span class="tag">USB MIDI</span></div>
+          </div>
         </a>
       </div>
 
